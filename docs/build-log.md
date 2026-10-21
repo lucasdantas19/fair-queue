@@ -267,3 +267,17 @@
 - A atualização do dashboard continua manual; polling e WebSockets ficaram
   fora do escopo.
 - A interface não inicia watcher, Horizon ou serviços de banco/broker.
+
+## 2026-10-21 — Compatibilidade do CI com PHP e ambiente de testes
+
+- Alinhada a versão do PHP do workflow de CI para 8.4, compatível com as
+  versões Symfony registradas no `composer.lock`.
+- Adicionada uma `APP_KEY` fixa e exclusiva ao `phpunit.xml`, permitindo que os
+  testes HTTP rodem no GitHub Actions sem depender de um arquivo `.env`.
+- Validação: 32 testes da aplicação, 4 testes do pacote, análise estrutural e
+  Pint passaram localmente.
+
+### Limitações desta etapa
+
+- A chave definida no `phpunit.xml` é somente para o ambiente de testes e não
+  deve ser reutilizada em desenvolvimento ou produção.
