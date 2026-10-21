@@ -12,6 +12,7 @@ class ActionJob implements ShouldQueue
     use Queueable;
 
     protected User $user;
+
     protected int $time;
 
     /**

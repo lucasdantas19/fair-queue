@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Actions\FairQueue\ScheduleJobAction;
 use App\Jobs\ActionJob;
 use App\Jobs\ActionTenSecondsJob;
-use App\Models\ScheduleJob;
 use Illuminate\Http\Request;
 
 class ActionController extends Controller
@@ -17,7 +16,7 @@ class ActionController extends Controller
         ]);
 
         $scheduleJobAction->execute(
-            new ActionJob($request->user(),$data['duration']),
+            new ActionJob($request->user(), $data['duration']),
             'user',
             $request->user()->id
         );

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\RateLimiter;
 class LoginController extends Controller
 {
     const LOGIN_MAX_ATTEMPTS = 5;
+
     const LOGIN_LOCKOUT_SECONDS = 60;
 
     public function create()

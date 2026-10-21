@@ -2,4 +2,6 @@
 
 namespace App;
 
-class_alias(\FairQueue\StatusScheduleJobsEnum::class, __NAMESPACE__.'\\StatusScheduleJobsEnum');
+use FairQueue\StatusScheduleJobsEnum;
+
+class_alias(StatusScheduleJobsEnum::class, __NAMESPACE__.'\\StatusScheduleJobsEnum');

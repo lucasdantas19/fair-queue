@@ -15,19 +15,17 @@ class ActionTenSecondsJob implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     /**
      * Execute the job.
      */
     public function handle(): void
     {
-        Log::info("ActionTenSecondsJob started. This job will take " . self::DELAY . " seconds to complete.");
+        Log::info('ActionTenSecondsJob started. This job will take '.self::DELAY.' seconds to complete.');
 
         sleep(self::DELAY);
 
-        Log::info("ActionTenSecondsJob completed after " . self::DELAY . " seconds.");
+        Log::info('ActionTenSecondsJob completed after '.self::DELAY.' seconds.');
     }
 }
